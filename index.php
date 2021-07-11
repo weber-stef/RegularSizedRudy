@@ -19,17 +19,11 @@ JHtml::_('script', 'jui/html5.js', array('version' => 'auto', 'relative' => true
 // Add Stylesheets and 
 JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
 
-
-// Check for a custom CSS file
-JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true));
-
 // Check for a custom js file
 JHtml::_('script', 'user.js', array('version' => 'auto', 'relative' => true));
 
-// Load optional RTL Bootstrap CSS
-
-
-
+// Check for a custom CSS file
+JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true));
 ?>
 
 <!DOCTYPE html>
@@ -37,15 +31,13 @@ JHtml::_('script', 'user.js', array('version' => 'auto', 'relative' => true));
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<jdoc:include type="head" />
-   <link rel="stylesheet" href="media\jui\css\bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 <link rel="styleheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template;?>/css/user.css" type="text/css" />
 
 </head>
 <body>
-<jdoc:include type="modules" name="top" /> 
+<nav><jdoc:include type="modules" name="top" /></nav>
 <jdoc:include type="component" />
 <jdoc:include type="modules" name="footer" />
 </body>

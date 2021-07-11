@@ -1,8 +1,60 @@
+/* variables */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu+Condensed&display=swap');
+/* Submenu-styles  */
 body {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  color: #333;
-  background-color: #fff;
+  margin:2%;
+  font-family:'Ubuntu Condensed', sans-serif;
+  color:#141414;
+  font-size:18px;
+  line-height:1.5rem;
+  background-color:#ccc;
+  display:grid;
+}
+.top {
+  display:grid;
+  width:100%;
+}
+.nav, h1, h2, h3, h4 { font-family:'PT Sans Narrow', sans-serif; }
+nav {
+  width:100%;
+  display:grid;
+  background-color:#ccc;
+}
+nav ul {
+  /* center navigation*/
+  min-width:90%;
+  justify-self:center;
+}
+nav * {
+  list-style:none;
+  text-decoration:none;
+  margin:0 0.325rem;
+  font-size:1.3rem;
+}
+nav li {
+  float:left;
+  width:15%;
+}
+.nav .small {
+  background-color:#c9c9c9;
+  margin:0 -0.325rem;
+  /* Submenu, important to break float */
+  padding:0 0.325rem;
+}
+.nav .small li {
+  line-height:3rem;
+  float:none !important;
+  display:block;
+  width:auto;
+  padding-top:1rem;
+}
+.nav .small li :hover { color:#ffffff; }
+img, iframe {
+  margin:0 2vw 2vw 0;
+  float:left;
+}
+img ::before, iframe ::before { clear:both; }
+.breadcrumb { background-color:transparent; }
+@media (max-width: 767px) {
+  .nav { display:none; }
 }

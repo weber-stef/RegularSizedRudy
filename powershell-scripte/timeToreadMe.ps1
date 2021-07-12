@@ -1,0 +1,1 @@
+Add-Content -Path ..\README.md -Value (Get-Date) -PassThru

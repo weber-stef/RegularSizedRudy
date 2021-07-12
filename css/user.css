@@ -1,12 +1,14 @@
 /* variables */
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu+Condensed&display=swap');
-/* Submenu-styles  */
+/* create a bottom rounded corner to each submenu's last item */
+/*dropdown-submenu*/
+/*end styling of nav*/
 body {
   margin:2%;
   font-family:'Ubuntu Condensed', sans-serif;
   color:#141414;
   font-size:18px;
-  line-height:1.5rem;
+  line-height:1.5em;
   background-color:#ccc;
   display:grid;
 }
@@ -17,38 +19,39 @@ body {
 .nav, h1, h2, h3, h4 { font-family:'PT Sans Narrow', sans-serif; }
 nav {
   width:100%;
-  display:grid;
-  background-color:#ccc;
-}
-nav ul {
-  /* center navigation*/
-  min-width:90%;
-  justify-self:center;
-}
-nav * {
-  list-style:none;
-  text-decoration:none;
-  margin:0 0.325rem;
+  background-color:#d45656;
+  z-index:2;
   font-size:1.3rem;
 }
-nav li {
+nav ul {
   float:left;
-  width:15%;
+  width:100%;
 }
-.nav .small {
-  background-color:#c9c9c9;
-  margin:0 -0.325rem;
-  /* Submenu, important to break float */
-  padding:0 0.325rem;
+nav ul li {
+  position:relative;
+  float:left;
+  padding:5%;
+  list-style:none;
 }
-.nav .small li {
-  line-height:3rem;
-  float:none !important;
-  display:block;
-  width:auto;
-  padding-top:1rem;
+nav ul li:last-child { border-radius:0px 0px 10px 10px; }
+nav ul li ul {
+  display:none;
+  position:absolute;
+  background-color:#fff;
+  padding:0 !important;
 }
-.nav .small li :hover { color:#ffffff; }
+nav ul li ul :hover { background-color:#d9d9d9; }
+nav a { text-decoration:none; }
+nav ul li ul li {
+  width:200px;
+  background-color:#ccc;
+  margin-left:-0.65rem;
+  padding:0.65rem !important;
+  line-height:2em;
+}
+nav ul li ul li a { padding:0; }
+nav ul li ul li a:hover { word-wrap:none; }
+nav ul li:hover ul { display:block; }
 img, iframe {
   margin:0 2vw 2vw 0;
   float:left;

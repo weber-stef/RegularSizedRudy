@@ -6,8 +6,9 @@
 @submenu-bc: @body-bc;
 @font-size-of-menu: 1.3rem;
 @font-size-of-submenu: 1.3rem;
-@line-height: 1.5rem;
-@submenu-margin-left: (@font-size-of-menu/4);
+@line-height: 1.5em;
+@line-height-menu: 2em;
+@submenu-margin-left: (@font-size-of-menu/2);
 
 // Import google-fonts
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu+Condensed&display=swap');
@@ -22,6 +23,7 @@ body {
 	background-color: @body-bc;
 	display: grid;
 }
+
 .top {
 	display: grid;
 	width: 100%;
@@ -34,54 +36,85 @@ h3,
 h4 {
 	font-family: 'PT Sans Narrow', sans-serif;
 }
+
 nav {
 	width: 100%;
-	display: grid;
-	background-color: @submenu-bc;
-	ul {
-		min-width: 90%;
-		/* center navigation*/
-		justify-self: center;
-	}
-	* {
-		list-style: none;
-		text-decoration: none;
-		margin: 0 @submenu-margin-left;
-		font-size: @font-size-of-menu;
-	}
-	li {
-		float: left;
-		width: 15%;
+	background-color: #d45656;
+	z-index: 2;
+	font-size: 1.3rem;
+}
+
+nav ul {
+	float: left;
+	width: 100%;
+
+}
+
+nav ul li {
+	position: relative;
+	float: left;
+	padding: 5%;
+	list-style: none;
+}
+
+nav ul li:last-child{
+	/* create a bottom rounded corner to each submenu's last item */
+	border-radius: 0px 0px 10px 10px;
+}
+nav ul li ul {
+	/*dropdown-submenu*/
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	padding: 0 !important;
+	:hover {
+
+		background-color: lighten(@body-bc, 5%);
+		;
 	}
 }
-.nav .small {
-	/* Submenu-styles  */
-	background-color: darken(@submenu-bc, 1%);
-	margin: 0 -(@submenu-margin-left);
-	padding: 0 (@submenu-margin-left);
-	/* Submenu, important to break float */
-	li {
-		line-height: (@line-height * 2);
-		float: none !important;
-		display: block;
-		width:auto;
-		padding-top: 1rem;
-		:hover {
-			color: lighten(@font-col, 95%);
-		}
+
+nav a {
+	text-decoration: none;
+}
+
+nav ul li ul li {
+	width: 200px;
+	background-color: #ccc;
+	margin-left: -(@submenu-margin-left);
+	padding: @submenu-margin-left  !important;
+	line-height: @line-height-menu;
+
+
+	a {
+		padding: 0;
+	}
+
+	a:hover {
+		word-wrap: none;
+
 	}
 }
+nav ul li:hover ul{
+	display: block;
+}
+
+/*end styling of nav*/
 img,
 iframe {
 	margin: 0 2vw 2vw 0;
 	float: left;
-	::before {
-		clear: both;
-	}
 }
+
+img ::before,
+iframe ::before {
+	clear: both;
+}
+
 .breadcrumb {
 	background-color: transparent;
 }
+
 @media (max-width: 767px) {
 	.nav {
 		display: none;

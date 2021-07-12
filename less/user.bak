@@ -1,0 +1,89 @@
+// User-styles
+/* variables */
+@font-size-standard: 18px;
+@font-col: rgb(20, 20, 20);
+@body-bc: rgb(233, 233, 233);
+@submenu-bc: @body-bc;
+@font-size-of-menu: 1.3rem;
+@font-size-of-submenu: 1.3rem;
+@line-height: 1.5rem;
+@submenu-margin-left: (@font-size-of-menu/4);
+
+// Import google-fonts
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu+Condensed&display=swap');
+
+
+body {
+	margin: 2%;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: @font-col;
+	font-size: @font-size-standard;
+	line-height: @line-height;
+	background-color: @body-bc;
+	display: grid;
+}
+.top {
+	display: grid;
+	width: 100%;
+}
+
+.nav,
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+nav {
+	width: 100%;
+	display: grid;
+	background-color: @submenu-bc;
+	ul {
+		min-width: 90%;
+		/* center navigation*/
+		justify-self: center;
+	}
+	* {
+		list-style: none;
+		text-decoration: none;
+		// margin: 0 @submenu-margin-left;
+		font-size: @font-size-of-menu;
+	}
+	li {
+		float: left;
+		width: 15%;
+	}
+}
+.nav .small {
+	/* Submenu-styles  */
+	background-color: darken(@submenu-bc, 1%);
+	margin: 0 -(@submenu-margin-left);
+	padding: 0 (@submenu-margin-left);
+	/* Submenu, important to break float */
+	li {
+		line-height: (@line-height * 2);
+		float: none !important;
+		display: block;
+		width:auto;
+		padding-top: 1rem;
+		:hover {
+			color: lighten(@font-col, 95%);
+		}
+	}
+}
+img,
+iframe {
+	margin: 0 2vw 2vw 0;
+	float: left;
+	::before {
+		clear: both;
+	}
+}
+.breadcrumb {
+	background-color: transparent;
+}
+@media (max-width: 767px) {
+	.nav {
+		display: none;
+	}
+}

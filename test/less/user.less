@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Ubuntu+Condensed&display=swap');
+/* variables */
+@font-size-standard: 20px;
+@font-col: rgb(253, 253, 213);
+@body-bc: #ccc;
+@submenu-bc: @body-bc;
+@font-size-of-menu: 1.2em;
+@font-size-of-submenu: 1.3em;
+@line-height: 1.5em;
+@line-height-menu: 2em;
+@submenu-margin-left: (@font-size-of-menu/2);
+
+*{
+    margin:0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'PT Sans', sans-serif;
+    }
+    font-size: @font-size-standard;
+    color: @font-col;
+}
+body{
+height: 100%;
+    width: 100%;
+    flex-direction: column;
+    *:nth-child(-n+12){
+        /* center content of all body child semantic elements and divs up to the 12th one */
+        justify-content: center;
+        align-items: center;
+    }
+    }
+nav{
+    width: 100%;
+    background-color: red;
+    height: 10vh;
+}
+.nav_icon{
+    display: inline-block;
+    background-color: #fff;
+}
+.nav_icon span{
+    display: block;
+    height: 4px;
+    width: 30px;
+    margin: 4px 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+/*----------- Begin styling side-menu-navigation (mobile) ------------*/
+.side-nav {
+    /* Initially the size of the sidebar is set to 0, that changes once the script is called */
+    width: 0px;
+    background-color: var(--classic-blue);
+    opacity: 0.9;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    font-size: var(--nav-font-size);
+  }
+  
+  .side-nav a,
+  li a {
+    list-style: none;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+    color: #f1f1f1;
+    width: 100%;
+  }
+  
+  .side-nav a :hover,
+  li a :hover {
+    font-size: larger;
+  }
+  
+  .burgerMenuIcon {
+    width: 10vw;
+    margin: 1vw;
+    margin-top: -5vw;
+  }
+  
+  .side-nav a:hover {
+    background-color: #0e0e0e;
+  }
+  
+  .side-nav a:hover::before, .side-nav a:hover::after {
+    content: "";
+  }
+  
+  .btn-close {
+    margin-bottom: 2vh;
+  }
+
+main{
+    width: 100%;
+    background-color: lightgrey;
+    height: 85vh;
+    position: relative;
+}
+
+footer{
+    width: 100%;
+    background-color: #2a1818;
+    height: 5vh;
+
+}
+@media (min-width: 940px) {
+    img {
+      max-width: var(--image-max);
+      float: left;
+    }
+    .burgerMenuIcon {
+      display: none;
+    }
+    .language img {
+      max-width: var(--flagsize-desktop);
+    }
+  }
+  
+  @media (max-width: 939px) {
+    .custom-language-switcher {
+      margin-top: 4vw;
+    }
+    .side-nav {
+      line-height: 5px;
+    }
+    * {
+      text-align: left !important;
+    }
+    a::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    .content img::after {
+      clear: both;
+      display: block;
+    }
+    .mainmenu {
+      display: none;
+    }
+    .content {
+      width: 90vw;
+      margin: 0 auto;
+    }
+    .speeches p {
+      line-height: var(--speeches-linehight-smalldevice) !important;
+    }
+  }
+  /*# sourceMappingURL=custom.css.map */

@@ -21,6 +21,7 @@
 	</files>
 	<positions>
 		<position>top</position>
+		<position>slides</position>
 		<position>content</position>
 		<position>footer</position>
 	</positions>

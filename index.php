@@ -32,14 +32,39 @@ JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<jdoc:include type="head" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 <link rel="styleheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template;?>/css/user.css" type="text/css" />
 
 </head>
 <body>
-<nav><jdoc:include type="modules" name="top" /></nav>
-<jdoc:include type="component" />
-<jdoc:include type="modules" name="footer" />
+<header>
+<nav>
+
+<jdoc:include type="modules" name="top" />
+<div class="burger">
+ <div class="line1"></div>
+ <div class="line2"></div>
+ <div class="line3"></div>
+</div></nav>
+<!--HIDDEN SIDE-MENU-NAVIGATION SHOWING WHEN OPEN-SLIDE-ICON IS PRESSED ON SMALL SCREENS-->
+<div id="side-menu" class="side-nav">
+			<a href="#" class="btn-close" onclick="closeSlideMenu()"></a>
+			<!-- <jdoc:include type="modules" name="language-switch" style="none" /> -->
+			<jdoc:include type="modules" name="menu" style="none" />
+			
+            </div>
+</header>
+<main><jdoc:include type="component" /></main>
+<footer><jdoc:include type="modules" name="footer" /></footer>
+<script>
+            function openSlideMenu() {
+                document.getElementById('side-menu').style.width = '250px';
+                console.log("opened");
+            }
+            function closeSlideMenu() {
+                document.getElementById('side-menu').style.width = '0';
+                console.log("closed");
+            }
+        </script>
+
 </body>
 </html>

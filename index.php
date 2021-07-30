@@ -45,13 +45,6 @@ JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true
  <div class="line2"></div>
  <div class="line3"></div>
 </div></nav>
-<!--HIDDEN SIDE-MENU-NAVIGATION SHOWING WHEN OPEN-SLIDE-ICON IS PRESSED ON SMALL SCREENS-->
-<div id="side-menu" class="side-nav">
-			<a href="#" class="btn-close" onclick="closeSlideMenu()"></a>
-			<!-- <jdoc:include type="modules" name="language-switch" style="none" /> -->
-			<jdoc:include type="modules" name="menu" style="none" />
-			
-            </div>
 </header>
 <main><jdoc:include type="component" /></main>
 <footer><jdoc:include type="modules" name="footer" /></footer>

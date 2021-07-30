@@ -40,10 +40,11 @@ main,
 .breadcrumb {
   padding: 2vw;
 }
-nav,
 .nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
   width: 100%;
 }
 nav ul li {
@@ -62,7 +63,7 @@ nav ul li ul {
   width: 100%;
   display: none;
   position: absolute;
-  z-index: 2;
+  z-index: 20;
 }
 nav ul li ul :hover {
   background-color: #d1d1d1;
@@ -74,7 +75,7 @@ a {
   color: #141414;
 }
 .open-slide {
-  background-color: #fff !important;
+  background-color: #fb7272 !important;
   width: 30px;
   height: 10px;
 }
@@ -128,13 +129,25 @@ iframe {
   padding-left: 5px;
 }
 @media screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
   img,
   iframe {
     float: none;
     display: block;
   }
   .nav {
-    display: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav li {
+    background-color: #f3c2c2;
+    text-align: end;
+    width: 100%;
+    height: 100%;
+    margin-right: 5vw;
   }
   .burger {
     display: block !important;

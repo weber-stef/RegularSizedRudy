@@ -37,6 +37,7 @@ h4 {
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-size: @font-size-of-menu;
 	margin: 0 0 @line-height 0;
+
 }
 
 main,
@@ -44,19 +45,12 @@ main,
 	padding: 2vw;
 }
 
-// nav,
-// .nav {
-// 	position: relative;
-// 	top: 0px;
-// 	z-index: 2;
-// 	font-size: 1.3rem;
-// 	background-color: @body-bc;
-// }
-
-nav, .nav{
+.nav {
 	display: flex;
 	justify-content: space-around;
-	// float: left;
+	align-items: center;
+	min-height: 10vh;
+
 	width: 100%;
 }
 
@@ -66,7 +60,6 @@ nav ul li {
 	padding: 5%;
 	list-style: none;
 	background-color: @body-bc;
-
 }
 
 nav ul li:last-child {
@@ -79,7 +72,7 @@ nav ul li ul {
 	width: 100%;
 	display: none;
 	position: absolute;
-	z-index: 2;
+	z-index: 20;
 
 	:hover {
 		background-color: lighten(@body-bc, 2%);
@@ -92,11 +85,13 @@ a {
 	text-decoration: none;
 	color: @font-col;
 }
-.open-slide{
-	background-color: #fff !important;
+
+.open-slide {
+	background-color: rgb(251, 114, 114) !important;
 	width: 30px;
 	height: 10px;
 }
+
 nav ul li ul li {
 	width: 200px;
 	margin-left: -(@submenu-margin-left);
@@ -115,17 +110,21 @@ nav ul li ul li {
 nav ul li:hover ul {
 	display: block;
 }
+
 .burger {
-cursor: pointer;
-display: none;
-margin: 2vw 2vw 2vw auto;
-div{
-	width: 25px !important;	
-	height: 3px !important;
-	background-color: #fff;
-	margin: 5px;
-	border-radius: 5px;} 
+	cursor: pointer;
+	display: none;
+	margin: 2vw 2vw 2vw auto;
+
+	div {
+		width: 25px !important;
+		height: 3px !important;
+		background-color: #fff;
+		margin: 5px;
+		border-radius: 5px;
+	}
 }
+
 /*end styling of nav*/
 img,
 iframe {
@@ -144,9 +143,10 @@ iframe {
 }
 
 .breadcrumb {
-	li a:hover{
+	li a:hover {
 		color: lighten(@font-col, 90%);
 	}
+
 	* {
 		float: left;
 		list-style: none;
@@ -155,15 +155,33 @@ iframe {
 }
 
 @media screen and (max-width: 767px) {
-img, iframe{
-	float: none;
-	display: block;
+	body {
+		overflow-x: hidden;
+	}
+
+	img,
+	iframe {
+		float: none;
+		display: block;
 
 	}
+
 	.nav {
-		display: none;
+		position: absolute;
+			display: flex;
+			flex-direction: column;
+		// display: none;
+		li {
+			background-color: rgb(243, 194, 194);
+			text-align: end;
+			width: 100%;
+			height: 100%;
+			margin-right: 5vw;
+			// z-index: 10;
+		}
 	}
-	.burger{
+
+	.burger {
 		display: block !important;
 	}
 }

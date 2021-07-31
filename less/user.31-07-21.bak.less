@@ -1,0 +1,41 @@
+// User-styles
+/* variables */
+@font-size-standard: 20px;
+@font-col: rgb(20, 20, 20);
+@body-bc: #ccc;
+@submenu-bc: @body-bc;
+@font-size-of-menu: 1.2em;
+@font-size-of-submenu: 1.3em;
+@line-height: 1.5em;
+@line-height-menu: 2em;
+@submenu-margin-left: (@font-size-of-menu/2);
+// Import google-fonts
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu&display=swap');
+
+
+* {
+	/* General body-styling and browser reset */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: @body-bc;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: @font-size-standard;
+	line-height: @line-height;
+	li {
+		cursor: pointer;
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+		color: @font-col;
+	}
+	a:hover,
+	p>a {
+		color: lighten(@font-col, 90%);
+	}
+	p>a:hover {
+		text-decoration: underline;
+	}
+}
+

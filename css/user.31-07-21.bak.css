@@ -1,0 +1,40 @@
+/* variables */
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsansnarrow/v12/BngRUXNadjH0qYEzV7ab-oWlsYCB.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgo6eA.ttf) format('truetype');
+}
+* {
+  /* General body-styling and browser reset */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+* li {
+  cursor: pointer;
+  list-style: none;
+}
+* a {
+  text-decoration: none;
+  color: #141414;
+}
+* a:hover,
+* p > a {
+  color: #fafafa;
+}
+* p > a:hover {
+  text-decoration: underline;
+}

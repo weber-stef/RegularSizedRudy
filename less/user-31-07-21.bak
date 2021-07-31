@@ -12,11 +12,13 @@
 // Import google-fonts
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu&display=swap');
 
-* {
+
+body {
 	/* General body-styling and browser reset */
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	background-color: @body-bc;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: @font-size-standard;
 	line-height: @line-height;
@@ -24,71 +26,40 @@
 		cursor: pointer;
 		list-style: none;
 	}
-
 	a {
 		text-decoration: none;
 		color: @font-col;
 	}
-
 	a:hover,
 	p>a {
 		color: lighten(@font-col, 90%);
 	}
-
 	p>a:hover {
 		text-decoration: underline;
 	}
 }
-main{
-	background-color: @body-bc;;
-}
-header {
-	padding-bottom: @line-height;
-	border: 1px solid black;	
-	background-color: darken(@body-bc, 10%);
-}
 
+/* Mobile-navigation */
+.nav,
 nav {
-	display: flex;
-
-	flex-direction: column;
-
-	li {
-
-		a {
-			background-color: transparent;
-		}
-	}
-}
-
-/*   Mobile menu */
-.nav {
-	display: flex;
-	flex-direction: column;
 	width: 100%;
-	text-align: center;
-	order: 2;
-	// display: none;
-}
-/*   Class to display hidden Navigation */
-.active .nav{
+	margin: 0;
+	padding: 0;
 	display: flex;
-}
+	flex-direction: column;
+	}
 
-/*   Submenus   */
-.nav-child{
-display: none;
-}
-.active .navchild{
-	display: flex;
+.nav {
+	/* set the the elments styled by the .nav-class as the second element in the flex order of the nav-id */
+	order: 2;
 }
 
 .burger {
 	/* set the Burger as the first element in the flex order of the nav-id */
 	order: 1;
 	cursor: pointer;
+	display: none;
 	margin: 2vw 2vw 2vw auto;
-
 	/* The burger icon itself consitst of three little divs with rounded corners and white border-color; */
 	div {
 		width: 25px !important;
@@ -98,3 +69,67 @@ display: none;
 		border-radius: 5px;
 	}
 }
+
+.active .nav {
+	display: block;
+}
+
+
+
+/* Joomla  */
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: @font-size-of-menu;
+	margin: 0 0 @font-size-standard 0;
+}
+img,
+iframe {
+	margin: 0 2vw 2vw 0;
+	float: left;
+	max-width: 90% !important;
+}
+
+main {
+/* 	actual joomla component */
+	padding: 2vw;
+}
+.items-row::after {
+	/* Creates the wanted float-stop at the end of each article */
+	display: block;
+	font-size: 0;
+	clear: both;
+	// height: 0;
+	content: "";
+}
+
+.breadcrumb {
+	padding: 2vw;
+	* {
+		float: left;
+		padding-left: 5px;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	body {
+		overflow-x: hidden;
+	}
+	img,
+	iframe {
+		float: none;
+		display: block;
+	}
+
+/* 	.burger {
+		display: block !important;
+	} */
+}
+
+/* When a menupoint has a submenu, mark it */
+/* .deeper.parent>a::after {
+	content: " ";
+} */

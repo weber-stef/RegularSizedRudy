@@ -2,14 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerIcon = document.querySelector(".burger");
     const navigation = document.querySelector(".nav");
     const sayit = "say it";
-    const navLinks = document.querySelectorAll('.nav li')
+    const navLinks = document.querySelectorAll('.nav li:not(.nav-child li)');
+    const numOfLinks = document.querySelectorAll('.nav li:not(.nav-child li)').length;
 
     /* Toggle mobile nav */
     function toggleMenu() {
 
         navLinks.forEach((link, index) => {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 14}s`;
-
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / numOfLinks}s`;
+            console.log(numOfLinks);
             console.log(link);
         })
 

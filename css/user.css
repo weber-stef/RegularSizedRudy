@@ -72,7 +72,7 @@ nav li a {
 }
 /*   Submenus   */
 .nav-child {
-  display: flex;
+  display: none;
 }
 .active .navchild {
   display: flex;

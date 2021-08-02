@@ -62,6 +62,10 @@ nav li a {
   order: 2;
   display: none;
 }
+.nav li,
+.nav-child li {
+  opacity: 0;
+}
 /*   Class to display hidden Navigation */
 .nav.active {
   display: block;
@@ -96,4 +100,13 @@ nav > ul > li.deeper.parent > a::after {
   content: "\f078";
   color: #141414;
   padding-left: 5px;
+}
+/* fade in menu */
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

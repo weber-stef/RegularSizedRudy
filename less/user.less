@@ -20,6 +20,7 @@
 	font-family: 'Ubuntu Condensed', sans-serif;
 	font-size: @font-size-standard;
 	line-height: @line-height;
+
 	li {
 		cursor: pointer;
 		list-style: none;
@@ -39,12 +40,15 @@
 		text-decoration: underline;
 	}
 }
-main{
-	background-color: @body-bc;;
+
+main {
+	background-color: @body-bc;
+	;
 }
+
 header {
 	padding-bottom: @line-height;
-	border: 1px solid black;	
+	border: 1px solid black;
 	background-color: darken(@body-bc, 10%);
 }
 
@@ -54,6 +58,7 @@ nav {
 	flex-direction: column;
 
 	li {
+		
 
 		a {
 			background-color: transparent;
@@ -64,24 +69,30 @@ nav {
 
 
 /*   Mobile menu */
-.nav, .nav-child{
+.nav,
+.nav-child {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	text-align: center;
 	order: 2;
 	display: none;
+	li{
+		opacity: 0;
+	}
 }
+
 /*   Class to display hidden Navigation */
 .nav.active {
 	display: block;
 }
 
 /*   Submenus   */
-.nav-child{
-display: flex;
+.nav-child {
+	display: flex;
 }
-.active .navchild{
+
+.active .navchild {
 	display: flex;
 }
 
@@ -89,7 +100,7 @@ display: flex;
 	/* set the Burger as the first element in the flex order of the nav-id */
 	order: 1;
 	cursor: pointer;
-	margin: 2vw 2vw 2vw auto; 
+	margin: 2vw 2vw 2vw auto;
 
 	/* The burger icon itself consitst of three little divs with rounded corners and white border-color; */
 	div {
@@ -100,13 +111,26 @@ display: flex;
 		border-radius: 5px;
 	}
 }
-nav > ul > li.deeper.parent > a::after{
-/* 	menu Points with submenu-points */
-font-family: "Font Awesome 5 Free";
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 900; 
-    content: "\f078";
-    color: @font-col;
-    padding-left: 5px;
+
+nav>ul>li.deeper.parent>a::after {
+	/* 	menu Points with submenu-points */
+	font-family: "Font Awesome 5 Free";
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 900;
+	content: "\f078";
+	color: @font-col;
+	padding-left: 5px;
+}
+
+/* fade in menu */
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+
 }

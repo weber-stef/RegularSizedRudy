@@ -61,23 +61,25 @@ nav {
 	}
 }
 
+
+
 /*   Mobile menu */
-.nav {
+.nav, .nav-child{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	text-align: center;
 	order: 2;
-	// display: none;
+	display: none;
 }
 /*   Class to display hidden Navigation */
-.active .nav{
-	display: flex;
+.nav.active {
+	display: block;
 }
 
 /*   Submenus   */
 .nav-child{
-display: none;
+display: flex;
 }
 .active .navchild{
 	display: flex;
@@ -87,14 +89,24 @@ display: none;
 	/* set the Burger as the first element in the flex order of the nav-id */
 	order: 1;
 	cursor: pointer;
-	margin: 2vw 2vw 2vw auto;
+	margin: 2vw 2vw 2vw auto; 
 
 	/* The burger icon itself consitst of three little divs with rounded corners and white border-color; */
 	div {
 		width: 25px !important;
 		height: 3px !important;
-		background-color: #fff;
+		background-color: #777;
 		margin: 5px;
 		border-radius: 5px;
 	}
+}
+nav > ul > li.deeper.parent > a::after{
+/* 	menu Points with submenu-points */
+font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900; 
+    content: "\f078";
+    color: @font-col;
+    padding-left: 5px;
 }

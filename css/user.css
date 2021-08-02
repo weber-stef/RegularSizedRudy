@@ -53,20 +53,22 @@ nav li a {
   background-color: transparent;
 }
 /*   Mobile menu */
-.nav {
+.nav,
+.nav-child {
   display: flex;
   flex-direction: column;
   width: 100%;
   text-align: center;
   order: 2;
+  display: none;
 }
 /*   Class to display hidden Navigation */
-.active .nav {
-  display: flex;
+.nav.active {
+  display: block;
 }
 /*   Submenus   */
 .nav-child {
-  display: none;
+  display: flex;
 }
 .active .navchild {
   display: flex;
@@ -81,7 +83,17 @@ nav li a {
 .burger div {
   width: 25px !important;
   height: 3px !important;
-  background-color: #fff;
+  background-color: #777;
   margin: 5px;
   border-radius: 5px;
+}
+nav > ul > li.deeper.parent > a::after {
+  /* 	menu Points with submenu-points */
+  font-family: "Font Awesome 5 Free";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 900;
+  content: "\f078";
+  color: #141414;
+  padding-left: 5px;
 }

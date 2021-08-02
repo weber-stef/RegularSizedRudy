@@ -21,7 +21,7 @@ JHtml::_('script', 'jui/html5.js', array('version' => 'auto', 'relative' => true
 JHtml::_('stylesheet', 'template.css', array('version' => 'auto', 'relative' => true));
 
 // Check for a custom js file
-JHtml::_('script', 'user.js', array('version' => 'auto', 'relative' => true));
+//JHtml::_('script', 'user.js', array('version' => 'auto', 'relative' => true));
 
 // Check for a custom CSS file
 JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true));
@@ -33,7 +33,8 @@ JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<jdoc:include type="head" />
 <link rel="styleheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template;?>/css/user.css" type="text/css" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<script type="module" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template;?>/js/user.js"  ></script>
 </head>
 <body>
 <header>
@@ -49,15 +50,15 @@ JHtml::_('stylesheet', 'user.css', array('version' => 'auto', 'relative' => true
 <main><jdoc:include type="component" /></main>
 <footer><jdoc:include type="modules" name="footer" /></footer>
 <script>
-            function openSlideMenu() {
+        /*     function openSlideMenu() {
                 document.getElementById('side-menu').style.width = '250px';
                 console.log("opened");
             }
             function closeSlideMenu() {
                 document.getElementById('side-menu').style.width = '0';
                 console.log("closed");
-            }
-        </script>
+            } */
+                  </script>
 
 </body>
 </html>
